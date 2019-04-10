@@ -1,0 +1,21 @@
+<h1 align="center">Our Investors!</h1>
+
+<h1 align="center">Find other investors!</h1>
+<%= form_tag users_path, remote: :true, method: :get do %>
+    <%= text_field_tag :search, params[:search], placeholder: "User's Name" %>
+    
+    <%= submit_tag 'Search'  %>
+<% end %>
+
+<table align="center">
+    
+    <% @users.each do |user| %>
+        <tr>
+            <td><%= link_to user.name, user_path(user) %> | </td>
+            <td><%= user.email %></td>
+        </tr>
+    <% end %>
+    </tr>
+</table>
+
+<%= link_to "Home", root_path %>
