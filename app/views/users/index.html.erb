@@ -11,6 +11,7 @@
     
     <% @users.each do |user| %>
         <tr>
+            <td><%= link_to user.username, user_path(user) %></td>
             <td><%= link_to user.name, user_path(user) %> | </td>
             <td><%= user.email %></td>
         </tr>
@@ -19,3 +20,4 @@
 </table>
 
 <%= link_to "Home", root_path %>
+<%= link_to "Create New User", new_user_path %>
