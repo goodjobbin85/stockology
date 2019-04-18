@@ -1,23 +1,40 @@
 <h1 align="center">Our Investors!</h1>
 
 <h1 align="center">Find other investors!</h1>
-<%= form_tag users_path, remote: :true, method: :get do %>
-    <%= text_field_tag :search, params[:search], placeholder: "User's Name" %>
-    
-    <%= submit_tag 'Search'  %>
-<% end %>
+
+<div align="center">
+    <%= form_tag users_path, method: :get do %>
+        <%= label_tag :name, "Search by name:" %>
+        <%= text_field_tag :name, params[:name], placeholder: "User's Name" %>
+        <%= submit_tag 'Search' %>
+    <% end %>
+</div>
+
+<div align="center">
+    <%= form_tag users_path, method: :get do %>
+        <%= label_tag :email, "Search by email:" %>
+        <%= text_field_tag :email, params[:email], placeholder: "User's Email" %>
+        <%= submit_tag 'Search'  %>
+    <% end %>
+</div>
+
+<div align="center">
+    <%= form_tag users_path, method: :get do %>
+        <%= label_tag :username, "Search by username:" %>
+        <%= text_field_tag :username, params[:username], placeholder: "Username" %>
+        <%= submit_tag "Search" %>
+    <% end %>
+</div>
 
 <table align="center">
-    
-    <% @users.each do |user| %>
-        <tr>
-            <td><%= link_to user.username, user_path(user) %></td>
-            <td><%= link_to user.name, user_path(user) %> | </td>
-            <td><%= user.email %></td>
-        </tr>
+    <% if @users.present? %>
+        <%= render @users %>
+    <% else %>
+        <h3 align="center">Sorry! User could not be found</h3>
     <% end %>
-    </tr>
+    
 </table>
 
 <%= link_to "Home", root_path %>
 <%= link_to "Create New User", new_user_path %>
+<%= link_to "Stocks", search_stocks_path %>

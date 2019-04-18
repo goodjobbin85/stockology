@@ -1,6 +1,15 @@
 class UsersController < ApplicationController
+
   def index
-    @users = User.all
+    if params[:email]
+      @users = User.search_by_email(params[:email])
+    elsif params[:name]
+      @users = User.search_by_name(params[:name])
+    elsif params[:username]
+      @users = User.search_by_username(params[:username])
+    else
+      @users = User.all
+    end
   end
 
   def show
@@ -54,6 +63,6 @@ class UsersController < ApplicationController
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :username)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :username, :search)
   end
 end

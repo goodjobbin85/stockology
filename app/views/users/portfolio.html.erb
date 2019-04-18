@@ -1,0 +1,20 @@
+<h1 align="center">Search for Stocks here</h1>
+
+<div align="center">
+    <%= form_tag search_stocks_path, method: :get do %>
+        <%= label_tag :stock, "Search Stocks:" %>
+        <%= text_field_tag :stock, params[:stock], placeholder: "Ticker Symbol" %>
+        
+        <%= submit_tag "Search" %>
+    <% end %>
+</div>
+
+<div align="center">
+    <% if @stock %>
+        <h3>Name: <%= @stock.name %></h3>
+        <h3>Ticker: <%= @stock.ticker %></h3>
+        <h3>Latest Price: <%= @stock.last_price %></h3>
+    <% end %>
+</div>
+
+<%= link_to "Home", root_path %>

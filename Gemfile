@@ -10,6 +10,7 @@ gem 'turbolinks',      '5.0.1'
 gem 'jbuilder',        '2.7.0'
 gem 'bcrypt',          '3.1.12'
 gem "stock_quote", '~> 2.0.0'
+gem "faker"
 
 
 group :development, :test do

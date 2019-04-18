@@ -1,5 +1,15 @@
 <div align="center">
     <%= form_for @user do |f| %>
+        <p>
+            <% if @user.errors.any? %>
+            <h2>The following errors prevented your user from being saved:</h2>
+                <ul>
+                    <% @user.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                </ul>
+            <% end %>
+        </p>
         
         <p>
             <%= f.label :username %>
