@@ -7,7 +7,7 @@ class Stock < ApplicationRecord
              new_stock = StockQuote::Stock.quote(ticker)
              new(name: new_stock.company_name, ticker: new_stock.symbol, last_price: new_stock.latest_price)
         rescue Exception => e
-            return nil
+             return nil
         end
        
     end

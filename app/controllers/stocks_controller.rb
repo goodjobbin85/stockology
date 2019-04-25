@@ -11,8 +11,7 @@ class StocksController < ApplicationController
         else
             @stock = Stock.find_stock(params[:stock])
             flash.now[:danger] = "Please enter valid stock" unless @stock
-            render json: @stock
-            
+            render "users/portfolio"
         end
         
     end
