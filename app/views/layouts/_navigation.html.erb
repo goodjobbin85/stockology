@@ -7,9 +7,14 @@
     <div class="navbar-nav">
       <%= link_to "Stock search", search_stocks_path, class: "nav-item nav-link active" %>
       <%= link_to "All Users", users_path, class: "nav-item nav-link active" %>
-      <%= link_to "Log In", login_path, class: "nav-item nav-link" %>
-      <a class="nav-item nav-link" href="#">Log Out</a>
-      <%= link_to "Sign Up", signup_path, class: "nav-item nav-link" %>
+      <% if logged_in? %>
+        <%= link_to "Log Out", logout_path, class: "nav-item nav-link" %>
+        <h3 Logged In As: <%= current_user.username %></h3>
+      <% else %>
+        <%= link_to "Sign Up", signup_path, class: "nav-item nav-link" %>
+        <%= link_to "Log In", login_path, class: "nav-item nav-link" %>
+      <% end %>
+      
     </div>
   </div>
 </nav>

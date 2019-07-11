@@ -28,6 +28,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Account successfully created!"
+      log_in(@user)
       redirect_to user_path(@user)
     else
       flash[:danger] = "Woops! Try again!"
@@ -52,6 +53,7 @@ class UsersController < ApplicationController
     @user.destroy
     if @user.destroy
       flash[:success] = "User successfully removed!"
+      session[:user_id] = nil
       redirect_to root_path
     end
   end
