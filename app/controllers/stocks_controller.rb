@@ -1,9 +1,5 @@
 class StocksController < ApplicationController
-    def list_stocks
-        @stocks = StockQuote::Stock.all
-        @stocks
-    end
-    
+
     def search
         if params[:stock].blank?
             flash.now[:danger] = "Stock cannot be blank"
