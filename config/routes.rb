@@ -7,7 +7,9 @@ Rails.application.routes.draw do
 
   root to: "welcome#index"
 
-  resources :users
+  resources :users do 
+    resources :stocks
+  end
   
   get 'search_stocks', to: "stocks#search"
   get 'portfolio', to: "users#portfolio"
