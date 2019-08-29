@@ -27,14 +27,17 @@
     <% end %>
 </div>
 
-<table align="center">
-    <% if @users.present? %>
-        <%= render @users %>
-    <% else %>
-        <h3 align="center">Sorry! User could not be found</h3>
+<div align="center">
+    <% if @user %>
+        <h3>Name: <%= @user.name %></h3>
+        <h3>Email: <%= @user.email %></h3>
+        <h3>Username: <%= @user.username %></h3>
     <% end %>
-    
-</table>
+</div>
+
+<div align="center">
+    <%= render 'list_users' %>
+</div>
 
 <%= link_to "Home", root_path %>
 <%= link_to "Create New User", new_user_path %>

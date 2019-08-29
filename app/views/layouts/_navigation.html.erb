@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-blue bg-light">
   <%= link_to "Stockology", root_path, class: "navbar-brand" %>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -8,8 +8,8 @@
       <%= link_to "Stock search", search_stocks_path, class: "nav-item nav-link active" %>
       <%= link_to "All Users", users_path, class: "nav-item nav-link active" %>
       <% if logged_in? %>
-        <%= link_to "Log Out", logout_path, class: "nav-item nav-link" %>
-        <h3 Logged In As: <%= current_user.username %></h3>
+        <%= link_to "Log Out", logout_path, class: "nav-item nav-link" %> 
+        <div class="nav-item nav-link">Logged In As: <%= link_to current_user.username.capitalize, user_path(current_user) %></div>
       <% else %>
         <%= link_to "Sign Up", signup_path, class: "nav-item nav-link" %>
         <%= link_to "Log In", login_path, class: "nav-item nav-link" %>

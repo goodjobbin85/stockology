@@ -2,14 +2,16 @@ class UsersController < ApplicationController
 
   def index
     if params[:email]
-      @users = User.search_by_email(params[:email])
+      @user = User.search_by_email(params[:email])
     elsif params[:name]
-      @users = User.search_by_name(params[:name])
+      @user = User.search_by_name(params[:name])
     elsif params[:username]
-      @users = User.search_by_username(params[:username])
+      @user = User.search_by_username(params[:username])
     else
       @users = User.all
     end
+    
+      @users = User.all
   end
 
   def show
