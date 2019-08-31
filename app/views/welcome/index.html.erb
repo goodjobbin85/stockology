@@ -2,6 +2,17 @@
 <h1 align="center">Finance Tracker</h1>
 <p align="center">Your personal stock tracking application</p>
 
-<%= link_to "All Investors", users_path %>
-<%= link_to "Create New User", new_user_path %>
-<%= link_to "Stocks", search_stocks_path %>
+<div align="center">
+    <% if logged_in? %>
+        <%= link_to "Make Friends", "#", class: "btn btn-success" %>
+        <%= link_to "Create Bank Account", "#", class: "btn btn-success" %>
+    <% else %>
+        <%= link_to "Sign up Now!", signup_path, class: "btn btn-success" %>
+    <% end %>
+</div>
+
+<div align="center">
+    <%= link_to "All Investors", users_path %>
+    <%= link_to "Create New User", new_user_path %>
+    <%= link_to "Stocks", search_stocks_path %>
+</div>
