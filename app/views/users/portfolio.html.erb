@@ -21,7 +21,11 @@
             <h4>Daily Low: <%= @stock.low %></h4>
             <h4>PE Ratio: <%= @stock.pe_ratio %></h4>
             <h4>YTD Change: <%= @stock.ytd_change %></h4>
-            <h3><%= link_to 'Add Stock', user_stocks_path(user: current_user, stock_ticker: @stock.ticker), class: "btn btn-primary", method: :post %></h3>
+            <% if current_user.can_add_stock?(@stock.ticker) %>
+                <h3><%= link_to 'Add Stock', user_stocks_path(user: current_user, stock_ticker: @stock.ticker), class: "btn btn-primary", method: :post %></h3>
+            <% else %>
+                <h3>Cannot add Stock</h3>
+            <% end %>
         <% end %>
     </div>
 <% else %>

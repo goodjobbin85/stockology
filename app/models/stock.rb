@@ -17,6 +17,9 @@ class Stock < ApplicationRecord
     end
     
     def self.find_by_ticker(ticker)
-        where("ticker LIKE ?", "%#{ticker}%")
+        #where("ticker LIKE ?", "%#{ticker}%").first
+        where(ticker: ticker).first
     end
+    
+    
 end

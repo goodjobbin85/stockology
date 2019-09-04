@@ -38,6 +38,21 @@ class User < ApplicationRecord
             return nil
         end
     end
+    
+    def stock_added?(ticker)
+        stock = Stock.find_by_ticker(ticker)
+        return false unless stock
+        user_stocks.where(stock_id: stock.id).exists?
+    end
+    
+    def under_stock_limit?
+        (user_stocks.count < 10)
+    end
+    
+    def can_add_stock?(ticker)
+        under_stock_limit? && !stock_added?(ticker)
+    end
+    
         
     has_many :user_stocks
     has_many :stocks, through: :user_stocks
