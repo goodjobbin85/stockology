@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190711213432) do
+ActiveRecord::Schema.define(version: 20190901143132) do
 
   create_table "stocks", force: :cascade do |t|
     t.datetime "created_at", null: false
@@ -19,6 +19,19 @@ ActiveRecord::Schema.define(version: 20190711213432) do
     t.string "ticker"
     t.decimal "last_price"
     t.integer "user_id"
+    t.string "stock_symbol"
+    t.string "primary_exchange"
+    t.string "sector"
+    t.decimal "high"
+    t.decimal "low"
+    t.decimal "change"
+    t.decimal "latest_colume"
+    t.decimal "avg_total_volume"
+    t.decimal "market_cap"
+    t.decimal "pe_ratio"
+    t.decimal "fifty_two_week_high"
+    t.decimal "fifty_two_week_low"
+    t.decimal "ytd_change"
     t.index ["user_id"], name: "index_stocks_on_user_id"
   end
 

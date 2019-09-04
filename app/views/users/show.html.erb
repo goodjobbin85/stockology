@@ -5,6 +5,25 @@
     <h3><%= @user.name %></h3>
     <h3><%= @user.email %></h3>
     
+    <h5>My Stocks</h5>
+    
+    <table align="center">
+        <tr>
+            <th>Company Name</th>
+            <th>Ticker Symbol</th>
+            <th>Latest Price</th>
+        </tr>
+        
+        <% @user.stocks.each do |stock| %>
+            <tr>
+                <td><%= stock.name %></td>
+                <td><%= stock.ticker %></td>
+                <td><%= stock.last_price %></td>
+            </tr>
+        <% end %>
+        <%= link_to "Find More Stocks", search_stocks_path %>
+    </table>
+    
     <ul>
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Edit Profile", edit_user_path(@user) %></li>

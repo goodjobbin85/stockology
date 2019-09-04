@@ -6,6 +6,7 @@
     <% if logged_in? %>
         <%= link_to "Make Friends", "#", class: "btn btn-success" %>
         <%= link_to "Create Bank Account", "#", class: "btn btn-success" %>
+        <%= link_to "Find Stocks", portfolio_path, class: "btn btn-success" %>
     <% else %>
         <%= link_to "Sign up Now!", signup_path, class: "btn btn-success" %>
     <% end %>

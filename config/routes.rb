@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
 
-  get 'user_stocks/create'
-
-  get 'user_stocks/destroy'
 
   get 'signup', to: "users#new"
   get 'login', to: "sessions#new", as: "login"
@@ -11,9 +8,8 @@ Rails.application.routes.draw do
 
   root to: "welcome#index"
 
-  resources :users do 
-    resources :stocks
-  end
+  resources :user_stocks, only: [:create, :destroy]
+  resources :users 
   
   get 'search_stocks', to: "stocks#search"
   get 'portfolio', to: "users#portfolio"

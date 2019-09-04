@@ -9,13 +9,26 @@
     <% end %>
 </div>
 
-<div align="center">
-    <% if @stock %>
-        <h3>Name: <%= @stock.name %></h3>
-        <h3>Ticker: <%= @stock.ticker %></h3>
-        <h3>Latest Price: <%= @stock.last_price %></h3>
-        <h3><%= link_to 'Add Stock', "#" %></h3>
-    <% end %>
-</div>
+<% if logged_in? %>
+    <div align="center">
+        <% if @stock %>
+            <h3>Name: <%= @stock.name %></h3>
+            <h3>Ticker: <%= @stock.ticker %></h3>
+            <h3>Latest Price: <%= @stock.last_price %></h3>
+            <h3>Market Capitalization: <%= @stock.market_cap %></h3>
+            <h4>Sector: <%= @stock.sector %></h4>
+            <h4>Daily High: <%= @stock.high %></h4>
+            <h4>Daily Low: <%= @stock.low %></h4>
+            <h4>PE Ratio: <%= @stock.pe_ratio %></h4>
+            <h4>YTD Change: <%= @stock.ytd_change %></h4>
+            <h3><%= link_to 'Add Stock', user_stocks_path(user: current_user, stock_ticker: @stock.ticker), class: "btn btn-primary", method: :post %></h3>
+        <% end %>
+    </div>
+<% else %>
+    <div align="center">
+        <h1>Please log in to search and follow stocks</h1>
+        <h1><%= link_to "Log In", login_path %></h1>
+    
+<% end %>
 
 <%= link_to "Home", root_path %>

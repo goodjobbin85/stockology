@@ -9,9 +9,9 @@
         
         <tr>
             <td><%= user.id %></td>
-            <td><%= user.username %></td>
+            <td><%= link_to user.username, user_path(user) %></td>
             <td><%= user.name %></td>
             <td><%= user.email %></td>
-    
+        </tr>
     <% end %>
 </table>
