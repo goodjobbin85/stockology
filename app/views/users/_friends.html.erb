@@ -1,0 +1,14 @@
+<h1>My Friends</h1>
+
+<% if !@friendships.nil? %>
+    <table align="center" class="table table-striped col-md-6">
+        <% @friendships.each do |friend| %>
+            <tr>
+                <td><%= link_to friend.name, user_path(friend) %></td>
+                <td><%= friend.email %></td>
+            </tr>
+        <% end %>
+    </table>
+<% else %>
+    <h3>You have no friends yet</h3>
+<% end %>

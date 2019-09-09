@@ -27,6 +27,10 @@
         <%= link_to "Find More Stocks", search_stocks_path %>
     </table>
     
+    
+    <%= render 'users/friends' %>
+    
+    
     <ul>
         <li><%= link_to "Home", root_path %></li>
         <li><%= link_to "Edit Profile", edit_user_path(@user) %></li>
