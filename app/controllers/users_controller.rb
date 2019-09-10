@@ -65,6 +65,9 @@ class UsersController < ApplicationController
     @friendships = current_user.friends
   end
   
+  def search_users
+  end
+  
   private
   
   def user_params

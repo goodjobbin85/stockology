@@ -1,5 +1,29 @@
-<h1>My Friends</h1>
+<h1 align="center">Connect With Friends!</h1>
 
-<% @friendships.each do |friend| %>
-    <%= friend.name %>
-<% end %>
+<div align="center">
+    <%= form_tag search_users_path, method: :get do %>
+        <%= label_tag :potential_friend, "Enter name or email:" %>
+        <%= text_field_tag :potential_friend, params[:potential_friend], placeholder: "Name or email" %>
+        
+        <%= submit_tag "Connect" %>
+    <% end %>
+</div>
+
+<h1 align="center">My Friends</h1>
+<table align="center", class="table table-striped col-md-6">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+    </tr>
+
+    
+    <% @friendships.each do |friend| %>
+        <tr>
+            <td><%= link_to friend.name, user_path(friend) %></td>
+            <td><%= friend.email %></td>
+            <td><%= link_to "Remove Friend", friendship_path(friend),
+                    method: :delete, data: { confirm: "Are you sure?" } %></td>
+        </tr>
+    <% end %>
+</table>
+    

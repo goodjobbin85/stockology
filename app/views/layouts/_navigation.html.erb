@@ -9,6 +9,7 @@
       <%= link_to "All Users", users_path, class: "nav-item nav-link active" %>
       <% if logged_in? %>
         <%= link_to "#{current_user.name.capitalize}'s Accounts", "#", class: "nav-item nav-link" %>
+        <%= link_to "#{current_user.name.capitalize}'s Friends", my_friends_path, class: "nav-item nav-link" %>
         <%= link_to "Log Out", logout_path, class: "nav-item nav-link" %> 
         <div class="nav-item nav-link">Logged In As: <%= link_to current_user.username.capitalize, user_path(current_user) %></div>
       <% else %>
