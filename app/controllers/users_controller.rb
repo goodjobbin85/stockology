@@ -63,9 +63,18 @@ class UsersController < ApplicationController
   
   def my_friends
     @friendships = current_user.friends
+    
   end
   
   def search_users
+    if params[:potential_friend].blank?
+      flash.now[:danger] = "Field cannot be blank"
+      render 'users/my_friends'
+    else
+      @users = User.search(params[:potential_friend])
+      flash.now[:danger] = "User not found" if @users.blank?
+      render 'users/my_friends'
+    end
   end
   
   private

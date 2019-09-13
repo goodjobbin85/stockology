@@ -53,6 +53,31 @@ class User < ApplicationRecord
         under_stock_limit? && !stock_added?(ticker)
     end
     
+    def self.search(param)
+        cleaned_param = clean_parameter(param)
+        result = (match_name(param) + match_username(param) +
+                 match_email(param)).uniq
+        return nil unless result
+        result
+    end
+    
+    def self.match_name(name)
+        where("name LIKE ?", "%#{name}%")
+    end
+    
+    def self.match_email(email)
+        where("email LIKE ?", "%#{email}%")
+    end
+    
+    def self.match_username(username)
+        where("username LIKE ?", "%#{username}%")
+    end
+    
+    def self.clean_parameter(param)
+        param.strip!
+        param.downcase!
+    end
+    
     has_many :friendships
     has_many :friends, through: :friendships
     has_many :user_stocks
