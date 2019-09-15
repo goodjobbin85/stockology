@@ -11,11 +11,11 @@
 
 <div align="center">
     <% if @users %>
-        <%= render 'list_users' %>
+        <%= render partial: 'list_users' %>
     <% end %>
 </div>
 
-<% if @friendships %>
+<% if !@friendships.nil? %>
 <h1 align="center">My Friends</h1>
     <table align="center", class="table table-striped col-md-6">
         <tr>
