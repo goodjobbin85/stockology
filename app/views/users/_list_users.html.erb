@@ -14,7 +14,9 @@
             <td><%= user.email %></td>
             <% if current_user.not_yet_friends?(user.id) %>
                 <td><%= link_to "Add Friend", add_friend_path(user: current_user, friend: user), 
-                        method: :post %></td>
+                        method: :post, class: "btn btn-success" %></td>
+            <% else %>
+                <td><%= link_to "Already Friends!", user_path(user) %></td>
             <% end %>
         </tr>
     <% end %>
