@@ -12,11 +12,13 @@
             <td><%= link_to user.username, user_path(user) %></td>
             <td><%= user.name %></td>
             <td><%= user.email %></td>
-            <% if current_user.not_yet_friends?(user.id) %>
-                <td><%= link_to "Add Friend", add_friend_path(user: current_user, friend: user), 
-                        method: :post, class: "btn btn-success" %></td>
-            <% else %>
-                <td><%= link_to "Already Friends!", user_path(user) %></td>
+            <% if logged_in? %>
+                <% if current_user.not_yet_friends?(user.id) %>
+                    <td><%= link_to "Add Friend", add_friend_path(user: current_user, friend: user), 
+                            method: :post, class: "btn btn-success" %></td>
+                <% else %>
+                    <td><%= link_to "Already Friends!", user_path(user) %></td>
+                <% end %>
             <% end %>
         </tr>
     <% end %>
