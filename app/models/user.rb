@@ -97,6 +97,10 @@ class User < ApplicationRecord
         update_attribute(:remember_digest, User.digest(remember_token))
     end
     
+    def authenticated?(remember_token)
+        Bcrypt::Password.new(remember_digest).is_password(remember_token)
+    end
+    
     has_many :friendships
     has_many :friends, through: :friendships
     has_many :user_stocks
