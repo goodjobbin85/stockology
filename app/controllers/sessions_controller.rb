@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email])
     if user && user.authenticate(params[:session][:password])
       log_in(user)
+      remember(user)
       flash[:success] = "Hello #{user.username}!"
       redirect_to user_path(user)
     else

@@ -8,6 +8,11 @@ module SessionsHelper
       session[:user_id] = nil
     end
     
+    def remember(user)
+        
+
+    end
+    
     def logged_in?
         !current_user.nil?
     end

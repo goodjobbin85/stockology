@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+    attr_accessor :remember_token
+    
     validates :name, :username, :email, presence: true
     validates :username, uniqueness: true
     validates :email, length: { minimum: 8 }
@@ -80,6 +82,19 @@ class User < ApplicationRecord
     
     def not_yet_friends?(user)
         friendships.where(friend_id: user).count < 1
+    end
+    
+    def User.digest(string)
+        Digest::SHA2.hexdigest(string)
+    end
+    
+    def User.new_token
+        SecureRandom.urlsafe_base64
+    end
+    
+    def remember 
+        self.remember_token = User.new_token
+        update_attribute(:remember_digest, User.digest(remember_token))
     end
     
     has_many :friendships
