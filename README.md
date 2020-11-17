@@ -19,4 +19,8 @@ Possible extended functionality
 -pm chat ala Facebook
 -video chat
 -docker
--braintree mock payment gateway
+-braintree mock payment gateway 
+-rspec testing 
+-react/js frontend
+-webscraper to some capacity 
+-email
