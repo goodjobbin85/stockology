@@ -53,6 +53,12 @@ class User < ApplicationRecord
     
     def can_add_stock?(ticker)
         under_stock_limit? && !stock_added?(ticker)
+    end 
+
+    def stock_purchase_price(ticker, quantity) 
+        stock = Stock.find_by_ticker(ticker)
+        total_price = stock.latest_price * quantity 
+        total_price
     end
     
     def self.search(param)

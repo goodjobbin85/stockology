@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191001023533) do
+ActiveRecord::Schema.define(version: 20201121052209) do
 
   create_table "friendships", force: :cascade do |t|
     t.integer "user_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20191001023533) do
     t.decimal "fifty_two_week_high"
     t.decimal "fifty_two_week_low"
     t.decimal "ytd_change"
+    t.integer "quantity"
     t.index ["user_id"], name: "index_stocks_on_user_id"
   end
 
