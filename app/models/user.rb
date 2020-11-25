@@ -18,7 +18,12 @@ class User < ApplicationRecord
             return nil
             
          end
-    end
+    end 
+
+    def self.youbank_welcome(name) 
+        user = User.find_by(name: name) 
+        "#{user}! #{YouBank.welcome}"
+    end 
     
     def self.search_by_name(name)
         where("name LIKE ?", "%#{name}%")

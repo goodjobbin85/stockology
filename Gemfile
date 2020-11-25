@@ -12,7 +12,8 @@ gem 'jbuilder',        '2.7.0'
 gem 'bcrypt',          '3.1.12'
 gem "stock_quote",     '~> 3.0.0'
 gem 'iex-ruby-client'
-gem "faker"
+gem "faker" 
+gem 'YouBank'
 
 
 group :development, :test do
