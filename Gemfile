@@ -13,7 +13,7 @@ gem 'bcrypt',          '3.1.12'
 gem "stock_quote",     '~> 3.0.0'
 gem 'iex-ruby-client'
 gem "faker" 
-gem 'YouBank',         '0.1.0'
+gem 'you_bank',         '0.1.0'
 
 
 group :development, :test do
