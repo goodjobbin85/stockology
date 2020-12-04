@@ -1,5 +1,6 @@
 class User < ApplicationRecord
-    attr_accessor :remember_token
+    attr_accessor :remember_token 
+    has_many :messages
     
     validates :name, :username, :email, presence: true
     validates :username, uniqueness: true
