@@ -19,5 +19,5 @@ Rails.application.routes.draw do
   post 'add_friend', to: "users#add_friend" 
 
   mount ActionCable.server, at: '/cable'
-  
+  get 'chat', to: "chatroom#index", as: "chatroom"
 end
