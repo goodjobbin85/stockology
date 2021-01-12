@@ -16,6 +16,8 @@ Rails.application.routes.draw do
   get 'my_friends', to: "users#my_friends"
   get 'search_stocks', to: "stocks#search"
   get 'portfolio', to: "users#portfolio"
-  post 'add_friend', to: "users#add_friend"
+  post 'add_friend', to: "users#add_friend" 
+
+  mount ActionCable.server, at: '/cable'
   
 end
