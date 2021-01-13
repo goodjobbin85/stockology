@@ -1,2 +1,28 @@
 <h1 align="center">Stock Chat</h1> 
 
+<div class="container">
+  <div class="row">
+    <div class="col-md">
+      <% @messages.each do |message| %> 
+        <%= message.body %> by <%= link_to message.user.name, user_path(message.user) %></br>
+      <% end %> 
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
+</div> 
+
+<br>
+<br>
+<div class="container"> 
+    <h2>Add Your Comments Below:</h2>
+    <%= form_for(@message, url: message_path) do |t| %>
+        <div class="mb-3">
+            <%= t.text_field :body, class: "form-control" %> <%= t.submit class: ".form-button btn btn-primary float-right" %>
+        <div> 
+    <% end %> 
+</div> 
