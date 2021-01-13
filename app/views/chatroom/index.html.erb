@@ -4,7 +4,7 @@
   <div class="row">
     <div class="col-md">
       <% @messages.each do |message| %> 
-        <%= message.body %> by <%= link_to message.user.name, user_path(message.user) %></br>
+         <%= link_to message.user.name, user_path(message.user) %>: <%= message.body %></br>
       <% end %> 
     </div>
     <div class="col-sm">
