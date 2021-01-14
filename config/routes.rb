@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
 
-  resources :messages
+
   get 'signup', to: "users#new"
   get 'login', to: "sessions#new", as: "login"
   post 'login', to: "sessions#create" 
@@ -21,8 +21,8 @@ Rails.application.routes.draw do
 
   mount ActionCable.server, at: '/cable'
 
-  get 'chat', to: "chatroom#index", as: "chatroom" 
+  get 'chat', to: "chatroom#index"
 
-  post 'message', to: "messages#create" 
+  post 'message', to: "messages#create", as: "chatroom"
 
 end 
