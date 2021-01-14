@@ -1,3 +1,4 @@
+
 class MessagesController < ApplicationController 
     def new 
         @message = Message.new 
@@ -22,4 +23,5 @@ class MessagesController < ApplicationController
         render(partial: 'message', locals: { message: message })
     end 
 end 
+
 

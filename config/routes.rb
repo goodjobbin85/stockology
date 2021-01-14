@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :messages
   get 'signup', to: "users#new"
   get 'login', to: "sessions#new", as: "login"
   post 'login', to: "sessions#create" 
