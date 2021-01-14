@@ -21,8 +21,8 @@ Rails.application.routes.draw do
 
   mount ActionCable.server, at: '/cable'
 
-  get 'chat', to: "chatroom#index"
+  get 'chat', to: "chatroom#index", as: "chatroom"
 
-  post 'message', to: "messages#create", as: "chatroom"
+  post 'message', to: "messages#create"
 
 end 
