@@ -1,0 +1,16 @@
+<h1 align="center">Stock Chat</h1> 
+
+<div class="container" id='message-container'>
+    <%= render @messages %>
+</div> 
+
+<br>
+<br>
+<div class="container"> 
+    <h2>Add Your Comments Below:</h2>
+    <%= form_for(@message, url: message_path, remote: true) do |t| %>
+        <div class="mb-3">
+            <%= t.text_field :body, class: "form-control" %> <%= t.submit class: ".form-button btn btn-primary float-right" %>
+        <div> 
+    <% end %> 
+</div> 
