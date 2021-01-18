@@ -1,0 +1,16 @@
+<% if @stock %>
+    <h3>Name: <%= @stock.name %></h3>
+    <h3>Ticker: <%= @stock.ticker %></h3>
+    <h3>Latest Price: <%= @stock.last_price %></h3>
+    <h3>Market Capitalization: <%= @stock.market_cap %></h3>
+    <h4>Sector: <%= @stock.sector %></h4>
+    <h4>Daily High: <%= @stock.high %></h4>
+    <h4>Daily Low: <%= @stock.low %></h4>
+    <h4>PE Ratio: <%= @stock.pe_ratio %></h4>
+    <h4>YTD Change: <%= @stock.ytd_change %></h4>
+    <% if current_user.can_add_stock?(@stock.ticker) %>
+        <h3><%= link_to 'Add Stock', user_stocks_path(user: current_user, stock_ticker: @stock.ticker), class: "btn btn-primary", method: :post %></h3>
+    <% else %>
+        <h3>Cannot add Stock</h3>
+    <% end %>
+<% end %>

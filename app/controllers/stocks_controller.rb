@@ -1,7 +1,7 @@
 class StocksController < ApplicationController
 
     def search
-        if params[:stock].blank?
+        if params[:stock].blank? #what is the diff between .blank? and .present?
             flash.now[:danger] = "Stock cannot be blank"
             render 'users/portfolio'
         else
