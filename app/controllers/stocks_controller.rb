@@ -6,8 +6,12 @@ class StocksController < ApplicationController
             render 'users/portfolio'
         else
             @stock = Stock.find_stock(params[:stock])
-            flash.now[:danger] = "Please enter valid stock" unless @stock
-            render "users/portfolio"
+            flash.now[:danger] = "Please enter valid stock" unless @stock 
+            if @stock 
+                respond_to do |format| 
+                    format.js { render partial: 'users/stock_result' }
+                end 
+            end 
         end
         
     end

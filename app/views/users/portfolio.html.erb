@@ -1,7 +1,7 @@
 <h1 align="center">Search for Stocks here</h1>
 
 <div align="center">
-    <%= form_tag search_stocks_path, method: :get do %>
+    <%= form_tag search_stocks_path, remote: true, method: :get do %>
         <%= label_tag :stock, "Search Stocks:" %>
         <%= text_field_tag :stock, params[:stock], placeholder: "Ticker Symbol" %>
         
@@ -10,8 +10,8 @@
 </div>
 
 <% if logged_in? %>
-    <div align="center">
-        <%= render partial: 'users/stock_result' %> 
+    <div align="center" id="stock-result">
+       
     </div>
 <% else %>
     <div align="center">
