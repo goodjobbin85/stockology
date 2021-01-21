@@ -1,0 +1,21 @@
+<div class="col-9"> 
+            <table align="center" class="table table-striped">
+                <tr>
+                    <th>Company Name</th>
+                    <th>Ticker Symbol</th>
+                    <th>Latest Price</th>
+                    <th>Remove Stock</th>
+                </tr>
+                
+                <% @user.stocks.each do |stock| %>
+                    <tr>
+                        <td><%= stock.name %></td>
+                        <td><%= stock.ticker %></td>
+                        <td><%= stock.last_price %></td>
+                        <td><%= link_to "Remove Stock", user_stock_path(stock), 
+                                method: :delete, data: { confirm: "Are you sure?" } %></td>
+                    </tr>
+                <% end %>
+                <%= link_to "Find More Stocks", search_stocks_path %>
+            </table>  
+        </div> 
