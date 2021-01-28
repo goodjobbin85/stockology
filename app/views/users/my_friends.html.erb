@@ -1,7 +1,7 @@
 <h1 align="center">Connect With Friends!</h1>
 
 <div align="center">
-    <%= form_tag search_users_path, method: :get do %>
+    <%= form_tag search_users_path, remote: true, method: :get do %>
         <%= label_tag :potential_friend, "Enter name or email:" %>
         <%= text_field_tag :potential_friend, params[:potential_friend], placeholder: "Name or email" %>
         
@@ -10,10 +10,14 @@
 </div>
 
 <div align="center">
-    <% if @users %>
+    <% if @user %>
         <%= render partial: 'list_users' %>
     <% end %>
-</div>
+</div> 
+
+<div align="center" id="friend-result"> 
+
+</div> 
 
 <% if !@friendships.nil? %>
 <h1 align="center">My Friends</h1>

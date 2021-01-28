@@ -74,6 +74,11 @@ class User < ApplicationRecord
         return nil unless result
         result
     end
+
+    def self.clean_parameter(param)
+        param.strip!
+        param.downcase!
+    end
     
     def self.match_name(name)
         where("name LIKE ?", "%#{name}%")
@@ -87,10 +92,7 @@ class User < ApplicationRecord
         where("username LIKE ?", "%#{username}%")
     end
     
-    def self.clean_parameter(param)
-        param.strip!
-        param.downcase!
-    end
+    
     
     def not_yet_friends?(user)
         friendships.where(friend_id: user).count < 1

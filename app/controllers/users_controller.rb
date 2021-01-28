@@ -66,17 +66,43 @@ class UsersController < ApplicationController
     
   end
   
-  def search_users
+  def search_users 
+    if params[:potential_friend].present? 
+      @user = User.search(params[:potential_friend])
+      if @user 
+        respond_to do |format| 
+          flash[:success] = "User found!"
+          format.js { render partial: 'users/friend_result' } 
+        end 
+      else 
+        flash[:danger] = "Please enter valid user" 
+        redirect_to my_friends_path 
+      end 
+    else 
+      flash[:alert] = "User name cannot be blank!" 
+      redirect_to my_friends_path 
+    end 
+  end 
+
+  def search_usersss
     if params[:potential_friend].blank?
       flash.now[:danger] = "Field cannot be blank"
       render 'users/my_friends'
     else
-      @users = User.search(params[:potential_friend])
-      flash.now[:danger] = "User not found" if @users.blank?
-      render 'users/my_friends'
+      @user = User.search(params[:potential_friend])
+      flash.now[:danger] = "User not found" if @user.blank? 
+      if @user 
+        respond_to do |format| 
+          flash[:success] = "#{@user} found!"
+          format.js { render partial: 'users/friend_result' } 
+        end 
+      else 
+        flash[:success] = "Enter valid user"
+        redirect_to my_friends_path
+      end
     end
-  end
-  
+  end 
+
   def add_friend
     @friend = User.find(params[:friend])
     current_user.friendships.build(friend_id: @friend.id)
