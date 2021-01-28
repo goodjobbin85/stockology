@@ -1,6 +1,14 @@
 <% if @user %> 
     <h3><%= @user.first.name %></h3> 
-    <h3><%= @user.first.email %></h3>
+    <h3><%= @user.first.email %></h3> 
+    <% if logged_in? %>
+                <% if current_user.not_yet_friends?(@user.first.id) %>
+                    <td><%= link_to "Add Friend", add_friend_path(user: current_user, friend: @user.first), 
+                            method: :post, class: "btn btn-success" %></td>
+                <% else %>
+                    <td><%= link_to "Already Friends!", user_path(@user.first) %></td>
+                <% end %>
+            <% end %> 
 <% end %> 
 
 
