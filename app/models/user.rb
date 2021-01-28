@@ -81,15 +81,15 @@ class User < ApplicationRecord
     end
     
     def self.match_name(name)
-        where("name LIKE ?", "%#{name}%")
+        self.where("name LIKE ?", "%#{name}%")
     end
     
     def self.match_email(email)
-        where("email LIKE ?", "%#{email}%")
+        self.where("email LIKE ?", "%#{email}%")
     end
     
     def self.match_username(username)
-        where("username LIKE ?", "%#{username}%")
+        self.where("username LIKE ?", "%#{username}%")
     end
     
     
