@@ -80,6 +80,8 @@ class User < ApplicationRecord
         param.downcase!
     end
     
+    #try to combione match_* methods below into 1 method 
+
     def self.match_name(name)
         self.where("name LIKE ?", "%#{name}%")
     end
