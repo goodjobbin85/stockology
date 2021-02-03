@@ -1,26 +1,23 @@
-Stockology
+# Welcome to Stockology 
 
---Rails 5.1.6
---Ruby 2.6.0
+## What is Stockology? 
 
---stock_quote gem and iex-ruby-client to connect to iex api for
-access to stock information
+Stockology is a web-based stock market portfolio management application.  Research stocks, add them to your 
+portfolios, create multiple portfolios and chat with friends in the public chatroom! Please visit https://stockology.herokuapp.com/ 
+and sign up to create an account and start trading!
 
---bootstrap 4.3.1 for frontend
 
-This app functions to create stock portfolios.  Users can create accounts,
-login/logout, add friends(which gives them access to view their portfolios),
-create posts to timeline(which can be seen on feed if friended). Users can also
-sign up for competitions, in which each user is given a fixed amount of funds and
-given a fixed amount of time to grow their portfolio.  The investor with the highest
-valued portfolio at the end of said time limit is the winner. Winners earn badges.  
+## Technology 
 
-Possible extended functionality
--pm chat ala Facebook
--video chat
--docker
--braintree mock payment gateway 
--rspec testing 
--react/js frontend
--webscraper to some capacity 
--email
+Rails 5.1.6
+Ruby 2.6.1
+bootstrap 4.3.1 
+
+### In Progress 
+
+* email verification 
+* varying account types 
+* banking 
+* digital currency(bitcoin) 
+* 1 Month Investment Challenge
+
