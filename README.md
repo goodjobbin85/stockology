@@ -9,9 +9,9 @@ and sign up to create an account and start trading!
 
 ## Technology 
 
-Rails 5.1.6
-Ruby 2.6.1
-bootstrap 4.3.1 
+- Rails 5.1.6
+- Ruby 2.6.1
+- bootstrap 4.3.1 
 
 ### In Progress 
 
