@@ -1,6 +1,12 @@
 class User < ApplicationRecord
     attr_accessor :remember_token 
-    has_many :messages
+    has_many :messages 
+    has_many :friendships
+    has_many :friends, through: :friendships
+    has_many :user_stocks
+    has_many :stocks, through: :user_stocks 
+    
+    has_secure_password
     
     validates :name, :username, :email, presence: true
     validates :username, uniqueness: true
@@ -121,12 +127,4 @@ class User < ApplicationRecord
     def forget
         update_attribute(:remember_digest, nil)
     end
-    
-    has_many :friendships
-    has_many :friends, through: :friendships
-    has_many :user_stocks
-    has_many :stocks, through: :user_stocks 
-    has_many :messages
-    
-    has_secure_password
 end

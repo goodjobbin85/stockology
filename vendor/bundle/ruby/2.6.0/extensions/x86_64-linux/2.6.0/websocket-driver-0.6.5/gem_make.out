@@ -1,0 +1,15 @@
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+/home/goodjobbin85/.rvm/rubies/ruby-2.6.1/bin/ruby -I /home/goodjobbin85/.rvm/rubies/ruby-2.6.1/lib/ruby/site_ruby/2.6.0 -r ./siteconf20210218-24607-1qqm4cs.rb extconf.rb
+creating Makefile
+
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" clean
+
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR="
+compiling websocket_mask.c
+linking shared-object websocket_mask.so
+
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/2.6.0/gems/websocket-driver-0.6.5/ext/websocket-driver
+make "DESTDIR=" install
+/usr/bin/install -m 0755 websocket_mask.so ./.gem.20210218-24607-1r6qsxf
