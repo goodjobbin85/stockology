@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 20201202201020) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "friendships", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "friend_id"
+    t.bigint "user_id"
+    t.bigint "friend_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["friend_id"], name: "index_friendships_on_friend_id"
@@ -34,7 +37,7 @@ ActiveRecord::Schema.define(version: 20201202201020) do
     t.string "name"
     t.string "ticker"
     t.decimal "last_price"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.string "stock_symbol"
     t.string "primary_exchange"
     t.string "sector"
@@ -55,8 +58,8 @@ ActiveRecord::Schema.define(version: 20201202201020) do
   create_table "user_stocks", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
-    t.integer "stock_id"
+    t.bigint "user_id"
+    t.bigint "stock_id"
     t.index ["stock_id"], name: "index_user_stocks_on_stock_id"
     t.index ["user_id"], name: "index_user_stocks_on_user_id"
   end
@@ -69,9 +72,13 @@ ActiveRecord::Schema.define(version: 20201202201020) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "password_digest"
-    t.integer "stock_id"
+    t.bigint "stock_id"
     t.string "remember_digest"
     t.index ["stock_id"], name: "index_users_on_stock_id"
   end
 
+  add_foreign_key "stocks", "users"
+  add_foreign_key "user_stocks", "stocks"
+  add_foreign_key "user_stocks", "users"
+  add_foreign_key "users", "stocks"
 end

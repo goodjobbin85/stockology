@@ -207,7 +207,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sqlite3 (1.3.13)
     stock_quote (3.0.0)
       json
       rest-client (~> 2.0.2)
@@ -232,6 +231,9 @@ GEM
     websocket-driver (0.6.5)
       websocket-extensions (>= 0.1.0)
     websocket-extensions (0.1.5)
+    yaml_db (0.7.0)
+      rails (>= 3.0)
+      rake (>= 0.8.7)
     you_bank (0.1.0)
 
 PLATFORMS
@@ -256,12 +258,12 @@ DEPENDENCIES
   sass-rails (= 5.0.6)
   spring (= 2.0.2)
   spring-watcher-listen (= 2.0.1)
-  sqlite3 (= 1.3.13)
   stock_quote (~> 3.0.0)
   turbolinks (= 5.0.1)
   tzinfo-data
   uglifier (= 3.2.0)
   web-console (= 3.5.1)
+  yaml_db
   you_bank (= 0.1.0)
 
 BUNDLED WITH
