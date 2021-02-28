@@ -6,5 +6,5 @@ test:
 
 production:
   adapter: redis
-  url: redis://localhost:6379/1
+  url: redis://redistogo:fd40de586439069df6905767e9107cbb@pearlfish.redistogo.com:10483/
   channel_prefix: finance_tracker_production
