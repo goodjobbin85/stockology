@@ -14,6 +14,7 @@ User.destroy_all
         name: Faker::Name.name,
         email: Faker::Internet.email,
         username: Faker::Name.name,
-        password: "password"
+        password: "password", 
+        balance: 10000.00
         )
 end

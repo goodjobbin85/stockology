@@ -3,7 +3,7 @@ class User < ApplicationRecord
     has_many :messages 
     has_many :friendships
     has_many :friends, through: :friendships
-    has_many :user_stocks
+    has_many :user_stocks, dependent: :destroy
     has_many :stocks, through: :user_stocks 
     
     has_secure_password
