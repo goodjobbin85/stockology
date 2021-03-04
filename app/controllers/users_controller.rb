@@ -31,7 +31,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       flash[:success] = "Account successfully created!"
-      log_in(@user)
+      log_in(@user) 
+      UserSignupMailer.send_signup_email(@user).deliver
       redirect_to user_path(@user)
     else
       flash[:danger] = "Woops! Try again!"
