@@ -5,7 +5,8 @@
         <% @friendships.each do |friend| %>
             <tr>
                 <td><%= link_to friend.name, user_path(friend) %></td>
-                <td><%= friend.email %></td>
+                <td><%= friend.email %></td> 
+                <td><%= link_to "Remove Friend", friendship_path(friend), method: :delete, data: { confirm: "Are you sure?" } %> 
             </tr>
         <% end %>
     </table>

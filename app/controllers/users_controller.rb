@@ -111,12 +111,12 @@ class UsersController < ApplicationController
     else
       flash[:danger] = "Woops!. An error has occurred"
     end
-    redirect_to my_friends_path
+    redirect_to current_user
   end
   
   private
   
   def user_params
-    params.require(:user).permit(:name, :email, :password, :password_confirmation, :username, :search)
+    params.require(:user).permit(:name, :email, :password, :password_confirmation, :balance, :username, :search)
   end
 end
