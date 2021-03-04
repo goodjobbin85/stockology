@@ -1,3 +1,6 @@
-<div class="col-md">
-         <%= link_to message.user.name, user_path(message.user) %>: <%= message.body %>
-</div>
+
+<% if message.user %> 
+    <div class="col-md">
+            <%= link_to message.user.name, user_path(message.user) %>: <%= message.body %>
+    </div> 
+<% end %> 
