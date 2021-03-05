@@ -86,8 +86,8 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name') 
 
   #ActionMailer production settings 
-  config.action_mailer.delivery_method = :smtp 
-  config.action_mailer.delivery_method = { :host => 'stockology.herokuapp.com', :protocol => 'https' }
+  #config.action_mailer.delivery_method = :smtp 
+  #config.action_mailer.delivery_method = { :host => 'stockology.herokuapp.com', :protocol => 'https' }
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
