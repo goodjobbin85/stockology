@@ -64,7 +64,7 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
@@ -86,8 +86,8 @@ Rails.application.configure do
   # config.logger = ActiveSupport::TaggedLogging.new(Syslog::Logger.new 'app-name') 
 
   #ActionMailer production settings 
-  #config.action_mailer.delivery_method = :smtp 
-  #config.action_mailer.delivery_method = { :host => 'stockology.herokuapp.com', :protocol => 'https' }
+  config.action_mailer.delivery_method = :smtp 
+  config.action_mailer.default_url_options = { :host => 'stockology.herokuapp.com', :protocol => 'https' }
 
   if ENV["RAILS_LOG_TO_STDOUT"].present?
     logger           = ActiveSupport::Logger.new(STDOUT)
