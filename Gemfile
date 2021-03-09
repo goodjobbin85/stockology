@@ -16,7 +16,8 @@ gem "stock_quote",     '~> 3.0.0'
 gem 'iex-ruby-client'
 gem "faker" 
 gem 'you_bank',         '0.1.0' 
-gem 'hirb', '~> 0.7.3'
+gem 'hirb', '~> 0.7.3' 
+gem 'sendgrid-ruby'
 
 
 group :development, :test do
