@@ -1,9 +1,4 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
+
 default: &default
   adapter: postgresql 
   encoding: unicode 
@@ -14,7 +9,7 @@ development:
   <<: *default
   database: stockapp_development 
   username: postgres
-  password: filmmaster69
+  password: <%= ENV['PG_KEY'] %>
   host: localhost
 
 # Warning: The database defined as "test" will be erased and
@@ -25,7 +20,7 @@ test:
   database: stockapp_test 
   host: localhost 
   username: postgres
-  password: filmmaster69
+  password: <%= ENV['PG_KEY'] %>
 
 production:
   <<: *default
