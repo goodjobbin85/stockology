@@ -126,7 +126,7 @@ GEM
       mini_portile2 (~> 2.4.0)
     pg (0.20.0)
     popper_js (1.16.0)
-    puma (3.9.1)
+    puma (3.12.6)
     rack (2.2.3)
     rack-proxy (0.6.5)
       rack
@@ -271,7 +271,7 @@ DEPENDENCIES
   jquery-rails (= 4.3.1)
   listen (= 3.1.5)
   pg (= 0.20.0)
-  puma (= 3.9.1)
+  puma (= 3.12.6)
   rails (= 5.1.6)
   react-rails
   redis (~> 3.3, >= 3.3.1)
