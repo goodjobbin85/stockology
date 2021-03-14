@@ -2,6 +2,9 @@
 <h1 align="center">Finance Tracker</h1>
 <p align="center">Your personal stock tracking application</p>
 
+<%= react_component("Cart") %> 
+<%= react_component("HelloWorld", { greeting: "Hey there" }) %> 
+
 <div align="center">
     <% if logged_in? %>
         <%= link_to "Make Friends", "#", class: "btn btn-success" %>
@@ -11,6 +14,7 @@
         <%= link_to "Sign up Now!", signup_path, class: "btn btn-success" %>
     <% end %>
 </div>
+
 
 <div align="center">
     <%= link_to "All Investors", users_path %>
