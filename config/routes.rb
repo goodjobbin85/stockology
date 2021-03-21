@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
 
 
+  resources :line_items
   resources :carts
   get 'signup', to: "users#new"
   get 'login', to: "sessions#new", as: "login"
