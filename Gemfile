@@ -19,13 +19,15 @@ gem 'you_bank',         '0.1.0'
 gem 'hirb', '~> 0.7.3' 
 gem 'sendgrid-ruby' 
 gem 'react-rails' 
-gem 'webpacker'
+gem 'webpacker' 
+
 
 
 group :development, :test do
  gem 'pg',              '0.20.0'
  gem 'byebug',        '9.0.6', platform: :mri 
- gem 'rspec-rails', '~> 4.0.2'
+ gem 'rspec-rails', '~> 4.0.2' 
+ gem 'dotenv-rails'
 end
 
 group :development do

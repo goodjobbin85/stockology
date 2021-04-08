@@ -8,7 +8,7 @@ default: &default
 development:
   <<: *default
   database: stockapp_development 
-  username: postgres
+  username: pg
   password: <%= ENV['PG_KEY'] %>
   host: localhost
 
@@ -19,7 +19,7 @@ test:
   <<: *default
   database: stockapp_test 
   host: localhost 
-  username: postgres
+  username: pg
   password: <%= ENV['PG_KEY'] %>
 
 production:
