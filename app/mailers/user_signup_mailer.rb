@@ -1,5 +1,5 @@
 class UserSignupMailer < ApplicationMailer
-    default :from => 'me@example.com' 
+    default :from => 'noreply@stockologie.com' 
 
     def send_signup_email(user) 
         @user = user 
