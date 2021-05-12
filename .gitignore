@@ -30,4 +30,7 @@
 /yarn-error.log
 yarn-debug.log*
 .yarn-integrity 
-.env
+.env 
+
+#do not commit database files to repo 
+config/database.yml
