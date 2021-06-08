@@ -27,7 +27,8 @@ group :development, :test do
  gem 'pg',              '0.20.0'
  gem 'byebug',        '9.0.6', platform: :mri 
  gem 'rspec-rails', '~> 4.0.2' 
- gem 'dotenv-rails'
+ gem 'dotenv-rails' 
+ gem 'factory_bot_rails'
 end
 
 group :development do
