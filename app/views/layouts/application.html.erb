@@ -10,12 +10,6 @@
   
   <%= render 'layouts/navigation' %>
   <body>
-  <% if logged_in? %> 
-    <div class="cart">
-      <%= react_component("Cart") %> 
-      <%= react_component("HelloWorld", { greeting: "Hey there" }) %> 
-    </div> 
-  <% end %> 
     
     <% flash.each do |type, message| %>
       <h3><%= message %></h3>
