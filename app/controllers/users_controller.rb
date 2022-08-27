@@ -109,11 +109,12 @@ class UsersController < ApplicationController
     current_user.friendships.build(friend_id: friend.id) 
     friend.friendships.build(friend_id: current_user.id)
     if current_user.save && friend.save
-      flash[:success] = "Friend successfully added"
+      flash[:success] = "Friend successfully added" 
+      redirect_to users_path
     else
-      flash[:danger] = "Woops!. An error has occurred"
+      flash[:danger] = "Woops!. An error has occurred" 
+      redirect_to users_path
     end
-    redirect_to current_user
   end
   
   private
