@@ -1,0 +1,16 @@
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/3.0.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+/home/goodjobbin85/.rvm/rubies/ruby-3.0.1/bin/ruby -I /home/goodjobbin85/.rvm/rubies/ruby-3.0.1/lib/ruby/3.0.0 -r ./siteconf20220327-26834-bjja0o.rb extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/3.0.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+make DESTDIR\= clean
+
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/3.0.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+make DESTDIR\=
+compiling unf.cc
+linking shared-object unf_ext.so
+
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/3.0.0/gems/unf_ext-0.0.7.7/ext/unf_ext
+make DESTDIR\= install
+/usr/bin/install -m 0755 unf_ext.so ./.gem.20220327-26834-sf6yqg

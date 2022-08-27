@@ -1,0 +1,13 @@
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/3.0.0/gems/json-2.3.1/ext/json
+/home/goodjobbin85/.rvm/rubies/ruby-3.0.1/bin/ruby -I /home/goodjobbin85/.rvm/rubies/ruby-3.0.1/lib/ruby/3.0.0 -r ./siteconf20220327-26834-j9fbp.rb extconf.rb
+creating Makefile
+
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/3.0.0/gems/json-2.3.1/ext/json
+make DESTDIR\= clean
+
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/3.0.0/gems/json-2.3.1/ext/json
+make DESTDIR\=
+make: Nothing to be done for 'all'.
+
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/3.0.0/gems/json-2.3.1/ext/json
+make DESTDIR\= install

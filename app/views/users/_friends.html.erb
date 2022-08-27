@@ -1,6 +1,5 @@
-<h1>My Friends</h1>
-
-<% if !@friendships.nil? %>
+<% if @friendships.count > 0 %>
+    <h1>My Friends</h1> 
     <table align="center" class="table table-striped col-md-6">
         <% @friendships.each do |friend| %>
             <tr>
@@ -11,5 +10,6 @@
         <% end %>
     </table>
 <% else %>
-    <h3>You have no friends yet</h3>
+    <h3>You have no friends yet</h3> 
+    <h3>Let's make some friends!</h3>
 <% end %>

@@ -1,0 +1,19 @@
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/3.0.0/gems/bcrypt-3.1.12/ext/mri
+/home/goodjobbin85/.rvm/rubies/ruby-3.0.1/bin/ruby -I /home/goodjobbin85/.rvm/rubies/ruby-3.0.1/lib/ruby/3.0.0 -r ./siteconf20220327-26834-pjfxdq.rb extconf.rb
+creating Makefile
+
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/3.0.0/gems/bcrypt-3.1.12/ext/mri
+make DESTDIR\= clean
+
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/3.0.0/gems/bcrypt-3.1.12/ext/mri
+make DESTDIR\=
+compiling bcrypt_ext.c
+compiling crypt.c
+compiling crypt_blowfish.c
+compiling crypt_gensalt.c
+compiling wrapper.c
+linking shared-object bcrypt_ext.so
+
+current directory: /home/goodjobbin85/code/finance_tracker_app/vendor/bundle/ruby/3.0.0/gems/bcrypt-3.1.12/ext/mri
+make DESTDIR\= install
+/usr/bin/install -m 0755 bcrypt_ext.so ./.gem.20220327-26834-shu67o
